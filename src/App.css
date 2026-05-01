@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-primary: #0D090A;
+    --color-secondary:#361F27;
+    --color-accent:#521945;
+    --color-neutral:#EAF2EF;
+    
+    --font-primary-text:"Roboto Slab", serif;
+    --font-seconday-text:"Nunito Sans", sans-serif;
+}
+
+* {
+    font-family:var(--font-seconday-text);
+}
+body{
+    background-color: var(--color-neutral);
+    font-weight: bold;
+}
+body,
+#root
+{
+    width:100%;
+    height: 100vh;
+}
+h1{
+    font-family: var(--font-primary-text);
+}
