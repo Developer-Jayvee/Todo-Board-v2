@@ -24,17 +24,18 @@ export interface RegisterFormData {
     password : string;
     cpassword : string;
 }
+export interface UserInfoData {
+    id: string;
+    email: string;
+    first_name: string;
+    last_name: string;
+    password : string;
+}
 export interface LoginResponseData {
     data : { 
         access : string;
         refresh : string;
-        user : {
-            id: string;
-            email: string;
-            first_name: string;
-            last_name: string;
-            password : string;
-        }
+        user : UserInfoData
     };
     message : string;
 }
