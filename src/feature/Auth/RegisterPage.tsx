@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 import useRegisterHook from "./hooks/useRegisterHook";
 
 export default function RegisterPage() {
-  const { handleRegistration, formDataState, handleInputChange ,error ,onLoading } = useRegisterHook();
+  const { handleRegistration, formDataState, handleInputChange ,error ,onLoading , isSubmitDisabled } = useRegisterHook();
   const navigate = useNavigate();
   const navigateBack = () => navigate("/")
   return (
-    <AuthTemplate onSubmit={handleRegistration} showReturnButton={true} onBack={() => navigateBack()} headerText="Sign Up" submitText="Create Account">
+    <AuthTemplate isSubmitDisabled={isSubmitDisabled} onSubmit={handleRegistration} showReturnButton={true} onBack={() => navigateBack()} headerText="Sign Up" submitText="Create Account">
       <div className="flex space-x-4">
         <InputCol
+          isRequired={true}
           inputValue={formDataState.first_name}
           onChange={handleInputChange}
           inputName="first_name"
@@ -20,6 +21,7 @@ export default function RegisterPage() {
           customClassName="w-1/2"
         />
         <InputCol
+          isRequired={true}
           inputValue={formDataState.last_name}
           onChange={handleInputChange}
           inputName="last_name"
@@ -31,6 +33,7 @@ export default function RegisterPage() {
       </div>
       <div className="mt-4">
         <InputCol
+          isRequired={true}
           inputValue={formDataState.email}
           onChange={handleInputChange}
           inputName="email"
@@ -41,6 +44,7 @@ export default function RegisterPage() {
       </div>
       <div className="mt-4">
         <InputCol
+          isRequired={true}
           inputValue={formDataState.password}
           onChange={handleInputChange}
           inputName="password"
@@ -51,12 +55,14 @@ export default function RegisterPage() {
       </div>
       <div className="mt-4">
         <InputCol
+          isRequired={true}
           onChange={handleInputChange}
           inputName="cpassword"
           labelName="Confirm Password"
           placeHolder="Confirm your password"
           inputType="password"
         />
+        {/* <p className="text-red-400 text-sm mt-2">Password did not match</p> */}
       </div>
       {error && <p className="text-red-500 text-sm">{error}</p>}
       {onLoading && <p className="text-blue-500 text-sm">Please wait...</p>}

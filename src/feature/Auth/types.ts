@@ -9,6 +9,7 @@ export interface AuthTemplateProps extends AuthTemplatesActions{
     children : ReactNode;
     headerText : string;
     submitText ?: string;
+    isSubmitDisabled ?: boolean;
 }
 
 export interface LoginFormData {
@@ -21,6 +22,7 @@ export interface RegisterFormData {
     last_name : string;
     email : string;
     password : string;
+    cpassword : string;
 }
 export interface LoginResponseData {
     data : { 

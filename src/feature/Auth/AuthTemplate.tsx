@@ -8,6 +8,7 @@ export default function AuthTemplate({
   onBack,
   onSubmit ,
   showReturnButton = false,
+  isSubmitDisabled = false
 }: AuthTemplateProps) {
   return (
     <div className="min-h-screen bg-gray-400 flex items-center justify-center p-4">
@@ -24,7 +25,7 @@ export default function AuthTemplate({
         <form className="space-y-4" onSubmit={onSubmit}>
           {children}
 
-          <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 rounded-lg transition-colors">
+          <button disabled={isSubmitDisabled} className={`${isSubmitDisabled ? 'bg-indigo-300 cursor-not-allowed' : 'bg-indigo-600 cursor-pointer hover:bg-indigo-700'} w-full   text-white font-medium py-2.5 rounded-lg transition-colors`}>
             {submitText}
           </button>
         </form>
