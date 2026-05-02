@@ -16,7 +16,7 @@ export const loginApi = async ({ email, password }: LoginFormData) => {
     localStorage.setItem("REFRESH_TOKEN", res.data.refresh);
     localStorage.setItem("USER", JSON.stringify(res?.data?.user));
   }
-  return response;
+  return response.data;
 };
 
 export const registerApi = async({ first_name , last_name ,email ,password} : RegisterFormData) => {

@@ -4,6 +4,7 @@ import { emailValidator } from "@/util/validations.util";
 import alert from "@/util/alert.util";
 import useInputHandler from "@/shareble/hooks/useInputHandler";
 import type { LoginFormData } from "../types";
+import { useNavigate } from "react-router-dom";
 
 export default function useLoginHook<R>() {
   const { formDataState, setFormDataState, handleInputChange, resetFields } =
@@ -13,6 +14,8 @@ export default function useLoginHook<R>() {
   const [onLoading, setOnLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [responseData, setResponseData] = useState<R>({} as R);
+
+  const navigate = useNavigate();
   const onSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -42,13 +45,13 @@ export default function useLoginHook<R>() {
         setOnLoading(false);
         return;
       }
-
+      
       alert.success("Login successful!");
       setResponseData(data);
       setError(null);
       setOnLoading(false);
       resetFields();
-      
+      navigate(`/${data?.user?.first_name}`)
     } catch (error) {
       setError(`${error}`);
       setOnLoading(false);
