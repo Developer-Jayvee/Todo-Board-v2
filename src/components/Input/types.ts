@@ -11,4 +11,8 @@ export interface InputColProps extends InputColEvents {
     customClassName ?: string;
     inputName ?: string;
     inputValue ?: string;
+    isRequired ?: boolean;
+    hasError ?: boolean;
+    errorOutput ?: string;
+    
 }
