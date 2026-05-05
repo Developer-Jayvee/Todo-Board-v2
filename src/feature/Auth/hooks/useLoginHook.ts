@@ -5,6 +5,7 @@ import alert from "@/util/alert.util";
 import useInputHandler from "@/shareble/hooks/useInputHandler";
 import type { LoginFormData } from "../types";
 import { useNavigate } from "react-router-dom";
+import { ucword } from "@/util/util";
 
 export default function useLoginHook<R>() {
   const { formDataState, setFormDataState, handleInputChange, resetFields } =
@@ -51,7 +52,7 @@ export default function useLoginHook<R>() {
       setError(null);
       setOnLoading(false);
       resetFields();
-      navigate(`/${data?.user?.first_name}`)
+      navigate(`/${ucword(data?.user?.first_name)}`)
     } catch (error) {
       setError(`${error}`);
       setOnLoading(false);
