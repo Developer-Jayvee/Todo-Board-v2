@@ -1,0 +1,9 @@
+
+.menu-bar{
+    transition: transform 200ms ease-in-out;
+}
+
+.menu-bar.active{
+    transform: rotate(90deg);
+   
+}

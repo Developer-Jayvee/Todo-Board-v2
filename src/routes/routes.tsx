@@ -3,7 +3,7 @@ import LoginPage from "@/feature/Auth/LoginPage";
 import RegisterPage from "@/feature/Auth/RegisterPage";
 import GuestLayout from "@/layouts/GuestLayout";
 import AuthLayout from "@/layouts/AuthLayout";
-import Dashboard from "@/feature/Dashboard/dashboard";
+import AuthMainLayout from "@/layouts/AuthMainLayout";
 
 export const routers = createBrowserRouter([
     {
@@ -26,7 +26,7 @@ export const routers = createBrowserRouter([
         children:[
             {
                 index:true,
-                element: <Dashboard/>
+                element: <AuthMainLayout/>
             }
         ]
     }
