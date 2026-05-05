@@ -1,10 +1,11 @@
 import axiosInstance from "@/config/axios.config";
+import { REFRESH_TOKEN_NAME, TOKEN_NAME, USER_INFO_NAME } from "@/constant/const";
 import type { LoginFormData, RegisterFormData } from "@features/Auth/types";
 
 export const resetLocalStorage = () => {
-  localStorage.removeItem("ACCESS_TOKEN");
-  localStorage.removeItem("REFRESH_TOKEN");
-  localStorage.removeItem("USER");
+  localStorage.removeItem(TOKEN_NAME);
+  localStorage.removeItem(REFRESH_TOKEN_NAME);
+  localStorage.removeItem(USER_INFO_NAME);
 };
 export const loginApi = async ({ email, password }: LoginFormData) => {
   const response = await axiosInstance.post("/auth/login", { email, password });
@@ -12,9 +13,9 @@ export const loginApi = async ({ email, password }: LoginFormData) => {
   
   if (response.status === 200) {
     const res = await response.data;
-    localStorage.setItem("ACCESS_TOKEN", res.data.access);
-    localStorage.setItem("REFRESH_TOKEN", res.data.refresh);
-    localStorage.setItem("USER", JSON.stringify(res?.data?.user));
+    localStorage.setItem(TOKEN_NAME, res.data.access);
+    localStorage.setItem(REFRESH_TOKEN_NAME, res.data.refresh);
+    localStorage.setItem(USER_INFO_NAME, JSON.stringify(res?.data?.user));
   }
   return response.data;
 };
