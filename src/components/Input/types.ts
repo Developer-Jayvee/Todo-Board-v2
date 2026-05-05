@@ -16,3 +16,7 @@ export interface InputColProps extends InputColEvents {
     errorOutput ?: string;
     
 }
+
+export interface SearchInputTypes {
+    customClass ?: string;
+}

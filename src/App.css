@@ -1,11 +1,12 @@
 @import 'tailwindcss';
 
 @theme {
-    --color-primary: #0D090A;
-    --color-secondary:#361F27;
+    --color-primary: #000814;
+    --color-secondary:#001d3d;
     --color-accent:#521945;
-    --color-neutral:#EAF2EF;
+    --color-neutral:#FFFFFF;
     
+    --color-body:#001d3d11;
     --font-primary-text:"Roboto Slab", serif;
     --font-seconday-text:"Nunito Sans", sans-serif;
 }
@@ -14,7 +15,7 @@
     font-family:var(--font-seconday-text);
 }
 body{
-    background-color: var(--color-neutral);
+    background-color: var(--color-body);
     font-weight: bold;
 }
 body,

@@ -25,6 +25,6 @@ export default function AuthLayout(){
     if(!isAuthenticated) return <Navigate to="/" replace/>
     
     return <UserInfoContext.Provider value={userInfo}>
-        <Outlet/>
+         <Outlet/>
     </UserInfoContext.Provider>
 }
