@@ -1,11 +1,12 @@
 import GroupCard from "@/feature/Home/components/Group/GroupCard";
 import PersonalCard from "@/feature/Home/components/Personal/PersonalCard";
 import LinksComponent from "@/feature/Home/components/Links/LinkList";
+import MessagePlatform from "@features/Home/components/Message/MessagePlatform";
 
 
 export default function Home() {
     return <div className="grid grid-cols-[auto_1fr] grid-rows-1 h-full  ">
-        <div className="w-[300px] flex flex-col gap-3 bg-white p-2 py-5" >
+        <div className="w-[300px] flex flex-col gap-3 bg-white p-2 py-5 border-r border-gray-300 shadow-2xl" >
             <div className="tabs w-full">
                 <LinksComponent/>
             </div>
@@ -29,6 +30,8 @@ export default function Home() {
                 </div>
             </div>
         </div>
-        <div>s</div>
+        <div className="mt-2 ">
+            <MessagePlatform/>
+        </div>
     </div>
 }

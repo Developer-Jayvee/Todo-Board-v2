@@ -10,7 +10,7 @@ export default function TopNav({
 } : TopNavInterface) {
     const { toggleMenu , isMenuActive } = useContext(AuthMainContext);
     return <header>
-        <nav className={`${customClass} ${isMenuActive ? 'translate-x-15' : ' max-sm:left-0 left-15'} transition-all px-2  fixed top-0  h-12 bg-neutral flex justify-between left-0 right-0 items-center`}> 
+        <nav className={`${customClass} ${isMenuActive ? 'translate-x-15' : ' max-sm:left-0 left-15'} border-b border-gray-300 transition-all px-2  fixed top-0  h-12 bg-neutral flex justify-between left-0 right-0 items-center`}> 
             <div className="max-sm:flex gap-1 items-center">
                 <Menu onClick={toggleMenu} className={`${isMenuActive ? 'active' : ''} cursor-pointer max-sm:inline hidden menu-bar `}/>    
                 <SearchInput/>
